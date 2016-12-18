@@ -1,0 +1,17 @@
+{
+  "version": "0.0.0",
+  "name": "circuit",
+  "manifest_version": 2,
+  "description": "",
+  "icons": {
+    "16": "imgs/logo-16.gif",
+    "48": "imgs/logo-48.gif",
+    "128": "imgs/logo-128.gif"
+  },
+  "options_page": "main.html",
+  "background": {
+    "page": "background.html"
+  },
+  "permissions": [ "tabs", "storage", "http://localhost:3000/*" ],
+  "content_security_policy": "default-src 'self'; script-src 'self' http://localhost:3000 https://localhost:3000 'unsafe-eval'; connect-src http://localhost:3000 https://localhost:3000; style-src * 'unsafe-inline' 'self' blob:; img-src 'self' data:;"
+}
