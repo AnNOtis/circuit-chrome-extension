@@ -1,0 +1,9 @@
+Use Case:
+  ☐ 觸發快捷鍵後，取得該網站的版本號
+  ☐ 查詢專有名詞，觸發輸入框，查詢後將結果顯示在該頁面
+  ☐ 使用快捷鍵跳到不同的網站
+
+First Step:
+  ☐ 能夠監測到頁面上的事件，並發出 http request，顯示 reponse 結果
+
+Combine http requests which retrieves info or executes services together. Trigger it with hotkeys, browser events or user actions.
