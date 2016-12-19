@@ -1,7 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 
-const HOST = '0.0.0.0'
+const HOST = 'localhost'
 const PORT = '3000'
 
 module.exports = {
