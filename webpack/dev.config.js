@@ -1,5 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const HOST = 'localhost'
 const PORT = '3000'
@@ -9,7 +10,7 @@ module.exports = {
   devServer: {
     host: HOST,
     port: PORT,
-    contentBase: path.join(__dirname, '../js'),
+    contentBase: path.join(__dirname, '../dev'),
     stats: {
       colors: true
     },
@@ -18,7 +19,8 @@ module.exports = {
   entry: {
     background: [path.join(__dirname, '../chrome/extensions/background')],
     main: [path.join(__dirname, '../chrome/extensions/main')],
-    inPage: [path.join(__dirname, '../chrome/extensions/in-page')]
+    inPage: [path.join(__dirname, '../chrome/extensions/in-page')],
+    tachyons: 'tachyons/css/tachyons.css'
   },
   output: {
     path: path.join(__dirname, '../dev/js'),
@@ -32,7 +34,8 @@ module.exports = {
       'process.env': {
         NODE_ENV: JSON.stringify('development')
       }
-    })
+    }),
+    new ExtractTextPlugin('[name].css', {allChunks: true})
   ],
   resolve: {
     extensions: ['', '.js'],
@@ -50,11 +53,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loaders: [
-          'style',
-          'css?modules&sourceMap&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
-          'postcss'
-        ]
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
       }
     ]
   }
