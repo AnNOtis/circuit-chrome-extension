@@ -16,6 +16,11 @@
       "browser",
       "node"
     ],
+    "rules": {
+      "import/no-unresolved": 0,
+      "import/no-extraneous-dependencies": 0,
+      "import/no-unassigned-import": 0
+    },
     "globals": [
       "chrome"
     ]
@@ -30,10 +35,12 @@
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
     "css-loader": "^0.26.1",
+    "css-module": "^1.1.4",
     "eslint-config-xo-react": "^0.10.0",
     "eslint-plugin-react": "^6.8.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "node-sass": "^4.1.0",
+    "react-css-modules": "^4.1.0",
     "sass-loader": "^4.1.0",
     "shelljs": "^0.7.5",
     "style-loader": "^0.13.1",
